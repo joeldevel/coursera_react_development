@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import Header from './Header';
 import Menu from './MenuComponent';
+import Footer from './FooterComponent';
 import DishDetail from './DishdetailComponent';
 import { DISHES } from '../shared/dishes';
 
@@ -25,19 +26,12 @@ class Main extends Component {
     // console.log( "Eldish pasado es: ", eldish);
     return (
       <div>
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-          </div>
-        </Navbar>
+        <Header/>
         <div class="container">
-          <div>
             <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
-          </div>
-          <div>
             <DishDetail dish={eldish} />
-          </div>
         </div>
+        <Footer />
       </div>
     );
   }
