@@ -1,6 +1,7 @@
 import React , { Component } from 'react';
 import  Main  from './components/MainComponent';
 import { DISHES } from './shared/dishes';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Navbar, NavbarBrand } from 'reactstrap';
 
@@ -11,9 +12,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <BrowserRouter>
         <Main />
-      </div>
+      </BrowserRouter>
     );
   }
 }
