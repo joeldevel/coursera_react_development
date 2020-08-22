@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
+// components
 import Header from './Header';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import Footer from './FooterComponent';
 import DishDetail from './DishdetailComponent';
 import Contact from './ContactComponent';
+import About from './AboutComponent';
 
+// data
 import { DISHES } from '../shared/dishes';
 import { LEADERS } from '../shared/leaders';
 import { COMMENTS } from '../shared/comments';
@@ -27,6 +30,7 @@ class Main extends Component {
   }
 
   render() {
+    // console.log( "main component, leaders are: ", this.state.leaders);
     const DishWithId = ({match}) => {
       return(
         <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
@@ -51,6 +55,7 @@ class Main extends Component {
             <Route path="/home" component={ HomePage }/>
             <Route exact path="/menu" component={ ()=><Menu dishes={this.state.dishes}/>}/>
             <Route path="/menu/:dishId" component={ DishWithId }/>
+            <Route exact path="/aboutus" component={ ()=><About leaders={this.state.leaders}/> } />
             <Route exact path="/contactus" component={ Contact } />
             <Redirect to="/home" />
           </Switch>
