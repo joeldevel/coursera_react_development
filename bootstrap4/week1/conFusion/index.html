@@ -51,7 +51,12 @@
                   <img src="img/logo.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                  <a  href="#reserve-table-form"class="btn btn-warning btn-block">Reserve Table</a>
+                  <a  href="#reserve-table-form"class="btn btn-warning btn-block"
+                       data-toggle="tootip" data-html="true"
+                       title="Or call us at: 1234123"
+                       data-placement="bottom">
+                  Reserve Table
+                </a>
                 </div>
             </div>
         </div>
@@ -226,6 +231,15 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(
+      function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      }
+
+    )
+    </script>
 </body>
 
 </html>
